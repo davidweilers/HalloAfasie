@@ -1,0 +1,84 @@
+<resources>
+    <string name="app_name">Hallo Afasie</string>
+
+    <string name="Nederlands_TEXT"><![CDATA[
+    <html>
+        Ik ben <i>NAAM</i>.<br />
+        <br />
+        Ik heb een IK_HEB gehad. Nu heb ik afasie. Dat is een taalstoornis.
+    </html>]]>
+    </string>
+    <string name="Nederlands_BEGRIJP"><![CDATA[Ik kan niet goed praten, maar ik kan u goed <u><b>begrijpen</b></u>.]]></string>
+    <string name="Nederlands_LANGZAAM">Wil je langzaam spreken?</string>
+
+    <string name="Engels_TEXT"><![CDATA[
+    <html>
+        I am <i>NAAM</i>.<br />
+        <br />
+        I had a IK_HEB. Now I have aphasia.<br />
+        <br />
+        BEGRIJP
+        LANGZAAM
+    </html>]]></string>
+    <string name="Engels_BEGRIJP"><![CDATA[I can\'t talk well, but I can understand you just fine.]]></string>
+    <string name="Engels_LANGZAAM"><![CDATA[Please speak slowly!]]></string>
+
+    <string name="Frans_TEXT"><![CDATA[
+    <html>
+        Je suis <i>NAAM</i>.<br />
+        <br />
+        J\'avais un IK_HEB. Maintenant, je souffre d\'aphasie.<br />
+        <br />
+        BEGRIJP
+        LANGZAAM
+    </html>]]>
+    </string>
+    <string name="Frans_BEGRIJP"><![CDATA[Je ne peux pas bien parler, mais je vous <u><b>comprends bien</u></b>.]]></string>
+    <string name="Frans_LANGZAAM"><![CDATA[Voulez-vous parler lentement?]]></string>
+
+    <string name="Duits_TEXT"><![CDATA[
+    <html>
+        Ich bin <i>NAAM</i>.<br />
+        <br />
+        Ich hatte eine IK_HEB. Jetzt habe ich Aphasie.<br />
+        <br />
+        BEGRIJP
+        LANGZAAM
+    </html>]]>
+    </string>
+    <string name="Duits_BEGRIJP"><![CDATA[Ich kann nicht gut sprechen, aber ich kann dich gut <u><b>verstehen</u></b>.]]></string>
+    <string name="Duits_LANGZAAM">Willst du langsam sprechen?</string>
+
+    <string name="Spaans_TEXT"><![CDATA[
+    <html>
+        Soy <i>NAAM</i>.<br />
+        <br />
+        He tenido una IK_HEB. Ahora tengo afasia.<br />
+        <br />
+        BEGRIJP
+        LANGZAAM
+    </html>]]>
+    </string>
+    <string name="Spaans_BEGRIJP"><![CDATA[No puedo hablar bien, pero puedo <u><b>entenderte</u></b> bien.]]></string>
+    <string name="Spaans_LANGZAAM">¿Quieres hablar despacio?</string>
+
+    <string name="Italiaans_TEXT"><![CDATA[
+    <html>
+        Sono <i>NAAM</i>.<br />
+        <br />
+        Ho avuto IK_HEB. Ora ho afasia.<br />
+        <br />
+        BEGRIJP
+        LANGZAAM
+    </html>]]>
+    </string>
+    <string name="Italiaans_BEGRIJP"><![CDATA[Non posso parlare bene, ma posso <u><b>capirti bene</u></b>.]]></string>
+    <string name="Italiaans_LANGZAAM">Vuoi parlare lentamente?</string>
+
+    <string name="activity_settings">Instellingen</string>
+
+    <string name="signature_title">Naam</string>
+
+    <string name="about">Over</string>
+
+</resources>

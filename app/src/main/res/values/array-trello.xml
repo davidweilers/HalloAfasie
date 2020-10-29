@@ -1,0 +1,31 @@
+<resources><string-array name="Nederlands_IK_HEB">
+    <item><![CDATA[infectie]]></item>
+    <item><![CDATA[hoofdtrauma]]></item>
+    <item><![CDATA[beroerte]]></item>
+    <item><![CDATA[herseninfarct]]></item>
+    <item><![CDATA[hersenbloeding]]></item>
+    <item><![CDATA[hersentumor]]></item>
+</string-array><string-array name="zinnen_communicatie_tips">
+    <item><![CDATA[Wil je langzamer praten?]]></item>
+    <item><![CDATA[Ik heb een verlamming, wil je me helpen?]]></item>
+    <item><![CDATA[Ik heb moeite met praten.]]></item>
+    <item><![CDATA[Sorry dit bedoelde ik niet.]]></item>
+    <item><![CDATA[Wil je niet te lange zinnen maken?]]></item>
+    <item><![CDATA[Ik vind schrijven lastig.]]></item>
+    <item><![CDATA[Ik kan moeilijk op woorden komen.]]></item>
+    <item><![CDATA[Ik vind goede zinnen maken lastig]]></item>
+    <item><![CDATA[Wil je het voorlezen?]]></item>
+    <item><![CDATA[Ik kan mij moeilijk uitdrukken, maar ik wil wel communiceren]]></item>
+    <item><![CDATA[Ik kan je  niet goed begrijpen.]]></item>
+    <item><![CDATA[wil je het voor me opschrijven?]]></item>
+    <item><![CDATA[vraag 1 ding tegelijk. Dan kan ik met \'ja\' of \'nee\' antwoord geven.]]></item>
+    <item><![CDATA[Heb geduld met mij alsjeblieft.]]></item>
+</string-array><string-array name="zinnen_info_uitleg_afasie">
+    <item><![CDATA[Ik kan niet goed praten]]></item>
+    <item><![CDATA[Ik kan niet goed praten, maar begrijp je wel.]]></item>
+    <item><![CDATA[Ik  kan niet goed lezen.]]></item>
+    <item><![CDATA[Ik kan niet schrijven.]]></item>
+    <item><![CDATA[Ik kan moeilijk op woorden komen.]]></item>
+    <item><![CDATA[Ik vind goede zinnen maken lastig]]></item>
+    <item><![CDATA[Ik kan mij moeilijk uitdrukken, maar ik wil wel communiceren]]></item>
+</string-array></resources>

@@ -1,0 +1,49 @@
+<resources>
+<!--    <string-array name="Nederlands_IK_HEB">
+        <item>hersenbloeding</item>
+        <item>herseninfarct</item>
+        <item>ongeluk</item>
+    </string-array>
+    <string-array name="Engels_IK_HEB">
+        <item>brain haemorrhage</item>
+        <item>cerebral infarction</item>
+        <item>accident</item>
+    </string-array>
+    <string-array name="Frans_IK_HEB">
+        <item>hémorragie cérébrale</item>
+        <item>infarctus cérébral</item>
+        <item>accident</item>
+    </string-array>
+    <string-array name="Duits_IK_HEB">
+        <item>Gehirnblutung</item>
+        <item>Hirninfarkt</item>
+        <item>Unfall</item>
+    </string-array>
+    <string-array name="Spaans_IK_HEB">
+        <item>hemorragia cerebral</item>
+        <item>infarto cerebral</item>
+        <item>accidente</item>
+    </string-array>
+    <string-array name="Italiaans_IK_HEB">
+        <item>un\'emorragia cerebrale</item>
+        <item>infarto cerebrale</item>
+        <item>un incidente</item>
+    </string-array>-->
+    <string-array name="land">
+        <item>Nederlands</item>
+    </string-array>
+    <!--         <item>Engels</item>
+        <item>Duits</item>
+        <item>Frans</item>
+        <item>Spaans</item>
+        <item>Italiaans</item>
+-->
+    <string-array name="landid">
+        <item>nl</item>
+        <item>en</item>
+        <item>du</item>
+        <item>fr</item>
+        <item>es</item>
+        <item>it</item>
+    </string-array>
+</resources>
