@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "56572604483",
+    "firebase_url": "https://david-150415.firebaseio.com",
+    "project_id": "david-150415",
+    "storage_bucket": "david-150415.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:56572604483:android:06098c44bdcf82032de4f6",
+        "android_client_info": {
+          "package_name": "nl.weilers.david.halloafasie"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "56572604483-3d7f59s8m2trfi4glp0j0jvep8pe4tss.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyADjl4Rcm4FQuCdXXgiYpvKJSulEz0BWJk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "56572604483-3d7f59s8m2trfi4glp0j0jvep8pe4tss.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

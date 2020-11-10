@@ -1,5 +1,13 @@
 <resources>
     <string name="app_name">Hallo Afasie</string>
+    <string name="app_about"><![CDATA[
+    <html>
+        Hallo Afasie<br>
+        v0.1<br>
+        Stichting Afasietherapie Amsterdam<br>
+
+    </html>
+    ]]></string>
 
     <string name="Nederlands_TEXT"><![CDATA[
     <html>
@@ -76,6 +84,7 @@
     <string name="Italiaans_LANGZAAM">Vuoi parlare lentamente?</string>
 
     <string name="activity_settings">Instellingen</string>
+    <string name="communicatie">Communicatie</string>
 
     <string name="signature_title">Naam</string>
 

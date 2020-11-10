@@ -24,40 +24,17 @@
             android:id="@+id/lang_spinner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:entries="@array/land" />
+            android:entries="@array/land"
+            />
 
-<!--        <QuickContactBadge android:id="@+id/quickbadge" />-->
-<!--        <Button
-            android:id="@+id/locale_nl"
-            android:text="nl"
-            android:onClick="locale"
-            android:insetLeft="0dp"
+        <ImageButton
+            android:id="@+id/revert"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <Button
-            android:id="@+id/locale_en"
-            android:text="en"
-            android:onClick="locale"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <Button
-            android:id="@+id/locale_fr"
-            android:text="fr"
-            android:onClick="locale"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <Button
-            android:id="@+id/locale_de"
-            android:text="de"
-            android:onClick="locale"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <Button
-            android:id="@+id/locale_es"
-            android:text="es"
-            android:onClick="locale"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />-->
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@android:drawable/ic_menu_revert"
+            tools:visibility="invisible" />
+
     </LinearLayout>
 
     <TextView
@@ -66,7 +43,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:text="text"
+        android:text=""
         app:autoSizeMinTextSize="20dp"
         app:autoSizeTextType="uniform"
         app:layout_constraintBottom_toBottomOf="parent"

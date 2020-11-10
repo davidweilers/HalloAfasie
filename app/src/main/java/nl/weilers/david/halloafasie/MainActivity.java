@@ -1,8 +1,12 @@
 package nl.weilers.david.halloafasie;
 
 import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.PopupMenu;
+import androidx.core.text.HtmlCompat;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Build;
@@ -19,6 +23,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -27,6 +32,7 @@ import android.widget.Toolbar;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Locale;
 
 import static android.text.Html.FROM_HTML_MODE_COMPACT;
@@ -37,7 +43,7 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
 //    Toolbar toolbar;
     SharedPreferences sharedPreferences;
     TextToSpeech speech;
-    ImageButton home;
+    ImageButton home, revert;
     Spinner spinner;
     String lang = null;
 
@@ -73,23 +79,21 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
 
               }
           });
-//        home = (ImageButton)findViewById(R.id.home);
-//
-//        home.setOnClickListener(new View.OnClickListener() {
-//            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
-//            @Override
-//            public void onClick(View view) {
-//                String a = new String(""+text.getText()).replaceAll("\\<.*?\\>", "");
-//                a = "test test hoi";
-//                speech.speak(a, TextToSpeech.QUEUE_FLUSH,null,null);
-//            }
-//        });
-        
+        home = (ImageButton)findViewById(R.id.home);
 
-                setupSharedPreferences();
+        setupSharedPreferences();
         //        toolbar = findViewById(R.id/);
 
         text = (TextView)findViewById(R.id.text);
+
+        revert = (ImageButton) findViewById(R.id.revert);
+        revert.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                string = "";
+                setText();
+            }
+        });
 
         ArrayAdapter adapter = ArrayAdapter.createFromResource(
                 this,
@@ -123,13 +127,62 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
             return true;
         }
         if (id == R.id.about) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle(R.string.about);
 
+            String app = getResources().getString(R.string.app_about);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                builder.setMessage(Html.fromHtml(app,FROM_HTML_MODE_COMPACT));
+            }   else {
+                Html.fromHtml(String.valueOf(Html.fromHtml(app)));
+            }
+//            builder.setNeutralButton("Ok", null);
+            AlertDialog alert = builder.create();
+            alert.show();
+        }
+        if (id == R.id.communicatie) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle(R.string.communicatie);
+//            final CharSequence[] s = new CharSequence[]{"Standaard"};
+            List<String> mStrings = new ArrayList<String>();
+            String[] array = getResources().getStringArray(R.array.zinnen_communicatie_tips);
+            mStrings.add("Standaard");
+            mStrings.addAll(Arrays.asList(array));
+            final String[] strings = new String[mStrings.size()];
+            for(int i=0;i<mStrings.size();i++) {
+                strings[i] = mStrings.get(i);
+            }
+//            strings = mStrings.toArray(strings);
+            builder.setItems(strings, new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int item) {
+                    // This is the place where you need to execute the logic
+//                    Toast.makeText(getApplicationContext(), "the value: " + getResources().getStringArray(R.array.zinnen_communicatie_tips)[item], Toast.LENGTH_LONG).show();
+//                    string = getResources().getStringArray(R.array.zinnen_communicatie_tips)[item];
+                    if (item == 0) {
+                        string = "";
+                    }   else {
+                        string = strings[item];
+                    }
+                    setText();
+                    dialog.dismiss();
+                }
+            });
+            AlertDialog alert = builder.create();
+            alert.show();
         }
         return super.onOptionsItemSelected(item);
     }
 
+    String string = "";
+
     private void setText() {
         try {
+            if (!string.isEmpty()) {
+                revert.setVisibility(View.VISIBLE);
+                text.setText(string);
+                return;
+            }
+            revert.setVisibility(View.INVISIBLE);
             String[] _lang = getResources().getStringArray(getResources().getIdentifier("land", "array", getPackageName()));
             String[] _langid = getResources().getStringArray(getResources().getIdentifier("landid", "array", getPackageName()));
 
