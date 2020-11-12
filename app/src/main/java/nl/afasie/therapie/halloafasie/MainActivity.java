@@ -1,10 +1,7 @@
-package nl.weilers.david.halloafasie;
+package nl.afasie.therapie.halloafasie;
 
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.PopupMenu;
-import androidx.core.text.HtmlCompat;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -23,13 +20,12 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
-import android.widget.Toolbar;
 
-import java.lang.reflect.Array;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -194,7 +190,7 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
 
             String t = getResources().getString(getResources().getIdentifier(lang+"_TEXT", "string", getPackageName()));
     //        String t = getString(R.string.Nederlands_TEXT);
-            t = t.replaceAll("NAAM", sharedPreferences.getString("NAAM","Naam"));
+            t = t.replaceAll("NAAM", sharedPreferences.getString("NAAM","naam"));
 
             int IK_HEB_1 = getResources().getIdentifier("Nederlands_IK_HEB", "array", getPackageName());
             String[] IK_HEB_2 = getResources().getStringArray(IK_HEB_1);

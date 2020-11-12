@@ -1,16 +1,13 @@
-package nl.weilers.david.halloafasie;
+package nl.afasie.therapie.halloafasie;
 
 import android.os.Bundle;
 import android.util.Log;
-import android.view.MenuItem;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.NavUtils;
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
-import androidx.preference.PreferenceManager;
 import androidx.preference.PreferenceScreen;
 import androidx.preference.SwitchPreference;
 
