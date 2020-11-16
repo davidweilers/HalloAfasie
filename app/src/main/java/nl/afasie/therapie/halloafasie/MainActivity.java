@@ -22,6 +22,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -33,7 +34,7 @@ import java.util.Locale;
 
 import static android.text.Html.FROM_HTML_MODE_COMPACT;
 
-public class MainActivity extends AppCompatActivity implements SharedPreferences.OnSharedPreferenceChangeListener {
+public class MainActivity extends AppCompatActivity implements SharedPreferences.OnSharedPreferenceChangeListener, TextToSpeech.OnInitListener {
 
     TextView text;
 //    Toolbar toolbar;
@@ -48,13 +49,22 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        speech = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
+        speech = new TextToSpeech(this,this);
+
+/*        speech = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
             @Override
             public void onInit(int status) {
-                speech.setLanguage(new Locale("nl_NL"));
+                if(status == TextToSpeech.SUCCESS) {
+                    Toast.makeText(MainActivity.this,""+status,Toast.LENGTH_SHORT).show();
+//                    speech.setLanguage(new Locale("nl_NL"));
+                    speech.setLanguage(Locale.US);
+                }   else {
+                    Toast.makeText(MainActivity.this,""+status,Toast.LENGTH_SHORT).show();
+                    Log.d("hoi",""+status);
+                }
 //                speech.setLanguage(Locale.getDefault());
             }
-        });
+        });*/
 //        speech.setLanguage(Locale.ENGLISH);
 //        Log.d("hoi", ""+speech.getAvailableLanguages() );
 
@@ -99,6 +109,23 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
 
         setText();//sharedPreferences.getString("signature", ""));
 
+    }
+
+    @Override
+    public void onInit(int i) {
+        if(i == TextToSpeech.SUCCESS){
+            Log.d("hoi",""+speech.getAvailableLanguages());
+            Toast.makeText(this, ""+speech.getAvailableLanguages(), Toast.LENGTH_SHORT).show();
+            int result = speech.setLanguage(new Locale("nl_NL"));
+            if(result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED){
+                Toast.makeText(this, "This language is not supported", Toast.LENGTH_SHORT).show();
+            }else{
+                Toast.makeText(this, "ok", Toast.LENGTH_SHORT).show();
+//                speech.setPitch((float) 0.98);
+            }
+        } else{
+            Toast.makeText(this, "Init failed!", Toast.LENGTH_SHORT).show();
+        }
     }
 
     private void setupSharedPreferences() {
@@ -200,8 +227,8 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
             String[] IK_HEB = getResources().getStringArray(_IK_HEB);
 
             for (int i=0;i<IK_HEB_2.length;i++) {
-                Log.d("hoi","'"+sharedPreferences.getString("IK_HEB","s2")+"' == '"+IK_HEB_2[i]+"'");
-                if (sharedPreferences.getString("IK_HEB","s2").equals(IK_HEB_2[i])) {
+                Log.d("hoi","'"+sharedPreferences.getString("IK_HEB",IK_HEB[0])+"' == '"+IK_HEB_2[i]+"'");
+                if (sharedPreferences.getString("IK_HEB",IK_HEB[0]).equals(IK_HEB_2[i])) {
                     t = t.replaceAll("IK_HEB", IK_HEB[i]);
                     Log.d("hoi",">>"+IK_HEB[i]);
                 }
@@ -249,35 +276,16 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
 //        }
     }
 
-    public void locale(View view) {
-//        view.
-//        switch (view.getId()) {
-//            case R.id.locale_nl:
-//                speech.setLanguage(new Locale("nl_NL"));
-//                break;
-//            case R.id.locale_en:
-//                speech.setLanguage(new Locale("en_EN"));
-//                break;
-//            case R.id.locale_fr:
-//                speech.setLanguage(new Locale("fr_FR"));
-//                break;
-//            case R.id.locale_de:
-//                speech.setLanguage(new Locale("de_DE"));
-//                break;
-//            case R.id.locale_es:
-//                speech.setLanguage(new Locale("es_ES"));
-//                break;
-//        }
-//        home(view);
-//        return false;
-    }
-
     public void home(View view) {
         if (speech.isSpeaking()) {
             speech.stop();
             return;
         }
         String a = new String(""+text.getText()).replaceAll("\\<.*?\\>", "");
-        speech.speak(a, TextToSpeech.QUEUE_FLUSH,null,null);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            speech.speak(a, TextToSpeech.QUEUE_FLUSH,null,this.hashCode() + "");
+        }   else {
+            speech.speak(a, TextToSpeech.QUEUE_FLUSH,null);
+        }
     }
 }
