@@ -2,10 +2,8 @@
     <string name="app_name">Hallo Afasie</string>
     <string name="app_about"><![CDATA[
     <html>
-        Hallo Afasie<br>
-        v0.1<br>
-        Stichting Afasietherapie Amsterdam<br>
-
+        Hallo Afasie, versionName (versionCode)<br>
+        Stichting Afasietherapie Amsterdam
     </html>
     ]]></string>
 
@@ -83,8 +81,8 @@
     <string name="Italiaans_BEGRIJP"><![CDATA[Non posso parlare bene, ma posso <u><b>capirti bene</u></b>.]]></string>
     <string name="Italiaans_LANGZAAM">Vuoi parlare lentamente?</string>
 
-    <string name="activity_settings">Instellingen</string>
-    <string name="communicatie">Communicatie</string>
+    <string name="activity_settings">Visitekaartje</string>
+    <string name="communicatie">Iets zeggen</string>
 
     <string name="signature_title">Naam</string>
 
